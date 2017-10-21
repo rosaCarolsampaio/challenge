@@ -14,7 +14,7 @@ Funcionalidade: Realizar logout no sistema
     E Solicitar o login
     Quando Solicitar a saída do sistema no link Sair
     Então Sitema exibe mensagem de entrada na página principal <mensagem>
-    E Página atual é fechada
+    E Página home é fechada
 
     Exemplos: 
       | email                         | senha    | mensagem                |
