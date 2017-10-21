@@ -98,8 +98,8 @@ public class RealizarLogoutSteps {
 		}
 	}
 
-	@Então("^Página atual é fechada$")
-	public void página_atual_é_fechada() throws Throwable {
+	@Então("^Página home é fechada$")
+	public void página_home_é_fechada() throws Throwable {
 
 		driver.quit();
 	}
