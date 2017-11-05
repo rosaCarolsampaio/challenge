@@ -58,15 +58,6 @@ public class RealizarLogoutSteps {
 		driver.findElement(By.xpath(btnLoginXpath)).click();
 	}
 
-	/*
-	 * @Dado("^Sistema redireciona para página meus acuncios$") public void
-	 * sistema_redireciona_para_página_meus_acuncios() throws Throwable {
-	 * 
-	 * // String urlRedirecionada = driver.getCurrentUrl();
-	 * assertEquals(driver.getCurrentUrl(), "http://www.otodom.pl");
-	 * 
-	 * }
-	 */
 	@Quando("^Solicitar a saída do sistema no link Sair$")
 	public void solicitar_a_saída_do_sistema_no_link_Sair() throws Throwable {
 
@@ -80,26 +71,21 @@ public class RealizarLogoutSteps {
 					.click();
 		}
 	}
-
-	@Então("^Sitema exibe mensagem de entrada na página principal \"(.*?)\"$")
-	public void sitema_exibe_mensagem_de_entrada_na_página_principal(
-			String mensagem) throws Throwable {
+	
+	@Então("^Sistema redireciona para página principal com link Minha Conta$")
+	public void sitema_redireciona_para_página_principal_com_link_Minha_Conta() throws Throwable {
 		
+		String titlePage = driver.getTitle();
+		String titleExpect = "Moje konto • www.otodom.pl";	
+		assertEquals(titlePage, titleExpect);
 		
-		WebElement mensagem2 = new WebDriverWait(driver, 10)
-		.until(ExpectedConditions.presenceOfElementLocated(By
-				.xpath("./html/body/main/section[2]/div/h3[text()='Promowane oferty']")));
-		if (!mensagem2.isSelected()) {
-
-			Actions actionsMensagem = new Actions(driver);
-			actionsMensagem.moveToElement(mensagem2).click().build().perform();
-			String mensagemPreVisualizacao = mensagem2.getText();
-			assertTrue(mensagemPreVisualizacao.contains(mensagem));
-		}
+		String urlRedirecionada = driver.getCurrentUrl();
+		String urlExpect = "https://www.otodom.pl/mojekonto/";
+		assertEquals(urlRedirecionada,urlExpect);
 	}
 
-	@Então("^Página home é fechada$")
-	public void página_home_é_fechada() throws Throwable {
+	@Então("^Página atual é fechada$")
+	public void página_atual_é_fechada() throws Throwable {
 
 		driver.quit();
 	}
