@@ -26,5 +26,5 @@ Funcionalidade: Ativar novo usuário no sistema
     E Página do teste é fechada
 
     Exemplos: 
-      | email                         | senha         | senhaRepete   | mensagem   |
-      | "qachallengept5557@gmail.com" | "inicial5557" | "inicial5557" | "sucesso!" |
+      | email                         | senha         | senhaRepete   |    mensagem   |
+      | "qachallengept5557@gmail.com" | "inicial5557" | "inicial5557" | "Gratulacje!" |
