@@ -26,8 +26,13 @@ public class AtivarNovoUsuarioSteps {
 	private String loginGmailID = "identifierId";
 	private String btnNextLoginID = "identifierNext";
 
-	private String senhaGmailXpath = ".//*[@id='password']/div[1]/div/div[1]/input";
-	private String btnNextSenhaID = "passwordNext";
+	private String senhaGmailName = "password";
+	private String btnNextSenhaXpath = ".//*[@id='passwordNext']/content/span";
+	
+	private String pesquisaEmailXpath = "//span[contains(.,'Aktywuj konto')]";
+	private String btnAtivarUsuarioEmailXpath = "//a[contains(.,'Aktywuj konto')]";
+	
+	private String mansagemAtivacaoSucessoXpath = "//h3[contains(.,'Gratulacje!')]";
 
 	@Dado("^Acessar a página registrar novo usuário$")
 	public void acessar_a_página_registrar_novo_usuário() throws Throwable {
@@ -126,7 +131,7 @@ public class AtivarNovoUsuarioSteps {
 
 		WebElement password = new WebDriverWait(driver, 10)
 				.until(ExpectedConditions.presenceOfElementLocated(By
-						.name("password")));
+						.name(senhaGmailName)));
 
 		if (!password.isSelected()) {
 			Actions actionsPassword = new Actions(driver);
@@ -134,7 +139,7 @@ public class AtivarNovoUsuarioSteps {
 					.sendKeys(senhaGmail).build().perform();
 
 			driver.findElement(
-					By.xpath(".//*[@id='passwordNext']/content/span")).click();
+					By.xpath(btnNextSenhaXpath)).click();
 		}
 	}
 
@@ -143,7 +148,7 @@ public class AtivarNovoUsuarioSteps {
 
 		WebElement listaEmail = new WebDriverWait(driver, 30)
 				.until(ExpectedConditions.presenceOfElementLocated(By
-						.xpath("//span[contains(.,'Aktywuj konto')]")));
+						.xpath(pesquisaEmailXpath)));
 
 		if (!listaEmail.isSelected()) {
 			Actions actionsPassword = new Actions(driver);
@@ -154,7 +159,7 @@ public class AtivarNovoUsuarioSteps {
 	@Quando("^Solicitar a ativação pelo link no email$")
 	public void solicitar_a_ativação_pelo_link_no_email() throws Throwable {
 
-		driver.findElement(By.xpath("//a[contains(.,'Aktywuj konto')]"))
+		driver.findElement(By.xpath(btnAtivarUsuarioEmailXpath))
 				.click();
 	}
 
@@ -173,7 +178,7 @@ public class AtivarNovoUsuarioSteps {
 			String arg1) throws Throwable {
 
 		String mensagemAtivacao = driver.findElement(
-				By.xpath(" //h3[contains(.,'Gratulacje!')]")).getText();
+				By.xpath(mansagemAtivacaoSucessoXpath)).getText();
 		assertTrue(mensagemAtivacao.contains("Gratulacje!"));
 		
 		//titlePage= Potwierdzenie
