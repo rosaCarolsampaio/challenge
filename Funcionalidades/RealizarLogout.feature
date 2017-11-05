@@ -13,9 +13,9 @@ Funcionalidade: Realizar logout no sistema
     E Informar a senha <senha>
     E Solicitar o login
     Quando Solicitar a saída do sistema no link Sair
-    Então Sitema exibe mensagem de entrada na página principal <mensagem>
-    E Página home é fechada
+    Então Sistema redireciona para página principal com link Minha Conta
+    E Página atual é fechada
 
     Exemplos: 
-      | email                         | senha    | mensagem                |
-      | "qachallengept5555@gmail.com" | "teste2" | " Adresujemy marzenia " |
+      | email                         | senha    |
+      | "qachallengept5555@gmail.com" | "teste2" |
