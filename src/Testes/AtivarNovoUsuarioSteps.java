@@ -170,16 +170,15 @@ public class AtivarNovoUsuarioSteps {
 		String urlRedirecionada = driver.getCurrentUrl();
 		String urlExpect = "https://www.otodom.pl/";
 		assertEquals(urlExpect, urlRedirecionada);
-
 	}
 
 	@Então("^Sistema exibe a mensagem de ativação de usuário com sucesso \"(.*?)\"$")
 	public void sistema_exibe_a_mensagem_de_ativação_de_usuário_com_sucesso(
-			String arg1) throws Throwable {
+			String mensagem) throws Throwable {
 
 		String mensagemAtivacao = driver.findElement(
 				By.xpath(mansagemAtivacaoSucessoXpath)).getText();
-		assertTrue(mensagemAtivacao.contains("Gratulacje!"));
+		assertTrue(mensagemAtivacao.contains(mensagem));
 		
 		//titlePage= Potwierdzenie
 	}
