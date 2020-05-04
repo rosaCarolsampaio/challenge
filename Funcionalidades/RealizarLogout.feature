@@ -17,5 +17,5 @@ Funcionalidade: Realizar logout no sistema
     E Página atual é fechada
 
     Exemplos: 
-      | email                         | senha    |
-      | "qachallengept5555@gmail.com" | "teste2" |
+      | email                         | senha   |
+      | "qaautomation@gmail.com" | "teste" |
