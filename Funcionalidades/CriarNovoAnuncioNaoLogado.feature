@@ -24,5 +24,5 @@ Funcionalidade: Criar novo anúncio sem login campos obrigatorios
     E Página é fechada
 
     Exemplos: 
-      | titulo       | preco | metragem | quarto | localizacao | descricao                                              | nome   | email                         | mensagem                                                                                |
-      | "Apto teste" |   900 |       55 |      2 | "Radom"     | "Descricao tem que ter no mínimo cinquenta caracteres" | "Rosa" | "qachallengept5555@gmail.com" | "To jest podgląd Twojego ogłoszenia - tak będzie ono prezentowane w Otodom po dodaniu." |
+      | titulo       | preco | metragem | quarto | localizacao | descricao                                              | nome   | email                    | mensagem                                                                                |
+      | "Apto teste" |   900 |       55 |      2 | "Radom"     | "Descricao tem que ter no mínimo cinquenta caracteres" | "Rosa" | "qaautomation@gmail.com" | "To jest podgląd Twojego ogłoszenia - tak będzie ono prezentowane w Otodom po dodaniu." |
